@@ -1,0 +1,119 @@
+@charset "UTF-8"
+
+@import url('/css/normalize.css')
+@import url('/css/fira_sans.css')
+@import url('/css/fira_code.css')
+
+$font-sans: 'Fira Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+$font-mono: 'Fira Code', monospace
+
+$font-color-primary: #000000
+$font-color-accent: #efefef
+
+body
+  font-family: $font-sans
+  font-weight: 400
+  font-size: 10pt
+
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-template-rows: 1fr
+  gap: 0
+  grid-template-areas: "sidebar content content content content content"
+
+  min-height: 100vh
+
+b
+  font-weight: 600
+
+h1
+  font-size: 18pt
+
+h2
+  font-size: 16pt
+
+h3
+  font-size: 14pt
+
+h4
+  font-size: 13pt
+
+h5
+  font-size: 12pt
+
+h6, a, p
+  font-size: 10pt
+
+h1, h2, h3, pre, code
+  font-weight: 400
+
+code
+  font-family: $font-mono
+
+.sidebar
+  grid-area: sidebar
+
+  background: #494683
+  background: -webkit-linear-gradient(left, #494683 0%, #555299 80%,#555299 100%)
+  background: -webkit-gradient(linear, left top, right top, from(#494683), color-stop(80%, #555299), to(#555299))
+  background: linear-gradient(to right, #494683 0%, #555299 80%, #555299 100%)
+
+  .title
+    margin: 32px auto 48px auto
+    padding: 0 14pt
+
+    img.avatar
+      display: block
+      margin: 0 auto
+      border-radius: 50%
+
+    h1
+      display: block
+      text-align: center
+      font-weight: 400
+      line-height: 1em
+      margin: 1em auto
+      color: invert($font-color-primary)
+
+  nav
+    a
+      display: block
+      padding: 1em 2em
+      color: invert($font-color-primary)
+      text-decoration: none
+      font-size: 10pt
+
+      &.active,
+      &.active:hover,
+      &.active:focus
+        color: rgba(255, 255, 255, 0.7)
+
+      &.active
+        color: invert($font-color-primary)
+        background: rgba(0, 0, 0, 0.2)
+
+      &:hover,
+      &:focus,
+      &:active
+        color: invert($font-color-primary)
+        background: rgba(0, 0, 0, 0.3)
+
+      &:visited
+        background: none
+
+  .footer
+    position: absolute
+    bottom: 16px
+    left: 16px
+    color: invert($font-color-primary)
+    font-weight: 400
+    opacity: 75%
+
+
+#content
+  grid-area: content
+  padding: 32px 48px
+  background: #ffffff
+  box-shadow: 25px -1px 25px -12px rgba(0,0,0,0.5) inset
+  -webkit-box-shadow: 25px -1px 12px -25px rgba(0,0,0,0.5) inset
+  -moz-box-shadow: 25px -1px 12px -25px rgba(0,0,0,0.5) inset

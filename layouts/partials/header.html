@@ -1,0 +1,11 @@
+<div class="sidebar">
+    <div class="title">
+        <img class="avatar" src="{{ $.Site.Params.avatar }}" width="100" height="100"/>
+        <h1>{{ $.Site.Params.author }}</h1>
+    </div>
+    <nav>
+        {{ $currentPage := . }}{{ range .Site.Menus.main }}{{ $menu_item_url := .URL | relLangURL }}{{ $page_url:= $currentPage.RelPermalink | relLangURL }}<a class="{{ if eq $menu_item_url $page_url }}active{{end}}" href="{{ .URL }}">{{ .Title }}</a>
+        {{ end }}
+    </nav>
+    <a href="{{ $.Site.Params.github }}" target="_blank" class="footer"><img src="/img/github.png" width="24" height="24"/></a>
+</div>
